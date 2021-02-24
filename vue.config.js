@@ -2,7 +2,13 @@ const path = require("path");
 
 module.exports = {
   publicPath: "/",
-
+  css: {
+    loaderOptions: {
+      sass: {
+        implementation: require("sass"), // This line must in sass option
+      },
+    },
+  },
   chainWebpack(config) {
     config.resolve.alias.set("@", path.join(__dirname, "./src"));
 
